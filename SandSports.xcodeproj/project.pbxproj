@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		440387CB1A98B795000D9A87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440387CA1A98B795000D9A87 /* AppDelegate.swift */; };
+		440387CD1A98B795000D9A87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440387CC1A98B795000D9A87 /* ViewController.swift */; };
+		440387D01A98B795000D9A87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 440387CE1A98B795000D9A87 /* Main.storyboard */; };
+		440387D21A98B795000D9A87 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 440387D11A98B795000D9A87 /* Images.xcassets */; };
+		440387D51A98B795000D9A87 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440387D31A98B795000D9A87 /* LaunchScreen.xib */; };
+		440387E11A98B795000D9A87 /* SandSportsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440387E01A98B795000D9A87 /* SandSportsTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		440387DB1A98B795000D9A87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 440387BD1A98B794000D9A87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 440387C41A98B794000D9A87;
+			remoteInfo = SandSports;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		440387C51A98B795000D9A87 /* SandSports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SandSports.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		440387C91A98B795000D9A87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		440387CA1A98B795000D9A87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		440387CC1A98B795000D9A87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		440387CF1A98B795000D9A87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		440387D11A98B795000D9A87 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		440387D41A98B795000D9A87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		440387DA1A98B795000D9A87 /* SandSportsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SandSportsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		440387DF1A98B795000D9A87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		440387E01A98B795000D9A87 /* SandSportsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandSportsTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		440387C21A98B794000D9A87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		440387D71A98B795000D9A87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		440387BC1A98B794000D9A87 = {
+			isa = PBXGroup;
+			children = (
+				440387C71A98B795000D9A87 /* SandSports */,
+				440387DD1A98B795000D9A87 /* SandSportsTests */,
+				440387C61A98B795000D9A87 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		440387C61A98B795000D9A87 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				440387C51A98B795000D9A87 /* SandSports.app */,
+				440387DA1A98B795000D9A87 /* SandSportsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		440387C71A98B795000D9A87 /* SandSports */ = {
+			isa = PBXGroup;
+			children = (
+				440387CA1A98B795000D9A87 /* AppDelegate.swift */,
+				440387CC1A98B795000D9A87 /* ViewController.swift */,
+				440387CE1A98B795000D9A87 /* Main.storyboard */,
+				440387D11A98B795000D9A87 /* Images.xcassets */,
+				440387D31A98B795000D9A87 /* LaunchScreen.xib */,
+				440387C81A98B795000D9A87 /* Supporting Files */,
+			);
+			path = SandSports;
+			sourceTree = "<group>";
+		};
+		440387C81A98B795000D9A87 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				440387C91A98B795000D9A87 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		440387DD1A98B795000D9A87 /* SandSportsTests */ = {
+			isa = PBXGroup;
+			children = (
+				440387E01A98B795000D9A87 /* SandSportsTests.swift */,
+				440387DE1A98B795000D9A87 /* Supporting Files */,
+			);
+			path = SandSportsTests;
+			sourceTree = "<group>";
+		};
+		440387DE1A98B795000D9A87 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				440387DF1A98B795000D9A87 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		440387C41A98B794000D9A87 /* SandSports */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 440387E41A98B796000D9A87 /* Build configuration list for PBXNativeTarget "SandSports" */;
+			buildPhases = (
+				440387C11A98B794000D9A87 /* Sources */,
+				440387C21A98B794000D9A87 /* Frameworks */,
+				440387C31A98B794000D9A87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SandSports;
+			productName = SandSports;
+			productReference = 440387C51A98B795000D9A87 /* SandSports.app */;
+			productType = "com.apple.product-type.application";
+		};
+		440387D91A98B795000D9A87 /* SandSportsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 440387E71A98B796000D9A87 /* Build configuration list for PBXNativeTarget "SandSportsTests" */;
+			buildPhases = (
+				440387D61A98B795000D9A87 /* Sources */,
+				440387D71A98B795000D9A87 /* Frameworks */,
+				440387D81A98B795000D9A87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				440387DC1A98B795000D9A87 /* PBXTargetDependency */,
+			);
+			name = SandSportsTests;
+			productName = SandSportsTests;
+			productReference = 440387DA1A98B795000D9A87 /* SandSportsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		440387BD1A98B794000D9A87 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Carl Kenne";
+				TargetAttributes = {
+					440387C41A98B794000D9A87 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					440387D91A98B795000D9A87 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 440387C41A98B794000D9A87;
+					};
+				};
+			};
+			buildConfigurationList = 440387C01A98B794000D9A87 /* Build configuration list for PBXProject "SandSports" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 440387BC1A98B794000D9A87;
+			productRefGroup = 440387C61A98B795000D9A87 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				440387C41A98B794000D9A87 /* SandSports */,
+				440387D91A98B795000D9A87 /* SandSportsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		440387C31A98B794000D9A87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				440387D01A98B795000D9A87 /* Main.storyboard in Resources */,
+				440387D51A98B795000D9A87 /* LaunchScreen.xib in Resources */,
+				440387D21A98B795000D9A87 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		440387D81A98B795000D9A87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		440387C11A98B794000D9A87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				440387CD1A98B795000D9A87 /* ViewController.swift in Sources */,
+				440387CB1A98B795000D9A87 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		440387D61A98B795000D9A87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				440387E11A98B795000D9A87 /* SandSportsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		440387DC1A98B795000D9A87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 440387C41A98B794000D9A87 /* SandSports */;
+			targetProxy = 440387DB1A98B795000D9A87 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		440387CE1A98B795000D9A87 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				440387CF1A98B795000D9A87 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		440387D31A98B795000D9A87 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				440387D41A98B795000D9A87 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		440387E21A98B795000D9A87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		440387E31A98B795000D9A87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		440387E51A98B796000D9A87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SandSports/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		440387E61A98B796000D9A87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SandSports/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		440387E81A98B796000D9A87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SandSportsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SandSports.app/SandSports";
+			};
+			name = Debug;
+		};
+		440387E91A98B796000D9A87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SandSportsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SandSports.app/SandSports";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		440387C01A98B794000D9A87 /* Build configuration list for PBXProject "SandSports" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				440387E21A98B795000D9A87 /* Debug */,
+				440387E31A98B795000D9A87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		440387E41A98B796000D9A87 /* Build configuration list for PBXNativeTarget "SandSports" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				440387E51A98B796000D9A87 /* Debug */,
+				440387E61A98B796000D9A87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		440387E71A98B796000D9A87 /* Build configuration list for PBXNativeTarget "SandSportsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				440387E81A98B796000D9A87 /* Debug */,
+				440387E91A98B796000D9A87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 440387BD1A98B794000D9A87 /* Project object */;
+}
