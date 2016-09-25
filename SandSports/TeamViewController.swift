@@ -26,9 +26,9 @@ class TeamViewController: UIViewController {
         resultsTableView.hidden = true
         
         UIGraphicsBeginImageContext(self.view.frame.size)
-        var image = UIImage(contentsOfFile: NSBundle.mainBundle().pathForResource("smallerBg", ofType: "png")!)
+        let image = UIImage(contentsOfFile: NSBundle.mainBundle().pathForResource("smallerBg", ofType: "png")!)
         image?.drawInRect(self.view.bounds)
-        var i = UIGraphicsGetImageFromCurrentImageContext()
+        let i = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         view.backgroundColor = UIColor(patternImage: i)
@@ -47,8 +47,8 @@ class TeamViewController: UIViewController {
         return false
     }
     
-    override func supportedInterfaceOrientations() -> Int {
-        return UIInterfaceOrientation.Portrait.rawValue
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return [.Portrait, .PortraitUpsideDown]
     }
     
     func showTeam(){
@@ -83,12 +83,12 @@ class GamesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
             results = [GamesTableSection]()
         }
     
-        func tableView(UITableView, numberOfRowsInSection: Int) -> Int {
+        func tableView(_: UITableView, numberOfRowsInSection: Int) -> Int {
             return results[numberOfRowsInSection].contents.count
         }
         
-        func tableView(UITableView, cellForRowAtIndexPath: NSIndexPath) -> UITableViewCell{
-            var cell = UITableViewCell()
+        func tableView(_: UITableView, cellForRowAtIndexPath: NSIndexPath) -> UITableViewCell{
+            let cell = UITableViewCell()
             cell.textLabel?.attributedText = results[cellForRowAtIndexPath.section].contents[cellForRowAtIndexPath.row]
             cell.textLabel?.numberOfLines = 3
             cell.backgroundColor = UIColor(red: 256, green: 256, blue: 256, alpha: 0.50)
@@ -97,8 +97,8 @@ class GamesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         
         func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
             if let view = view as? UITableViewHeaderFooterView {
-                view.textLabel.backgroundColor = UIColor.clearColor()
-                view.textLabel.textColor = UIColor.blackColor()
+                view.textLabel!.backgroundColor = UIColor.clearColor()
+                view.textLabel!.textColor = UIColor.blackColor()
             }
         }
         

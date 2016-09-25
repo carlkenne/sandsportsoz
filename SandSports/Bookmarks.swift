@@ -18,9 +18,9 @@ class Bookmarks: UITableViewController {
         super.viewDidLoad()
         
         UIGraphicsBeginImageContext(self.view.frame.size)
-        var image = UIImage(contentsOfFile: NSBundle.mainBundle().pathForResource("smallerBg", ofType: "png")!)
+        let image = UIImage(contentsOfFile: NSBundle.mainBundle().pathForResource("smallerBg", ofType: "png")!)
         image?.drawInRect(self.view.bounds)
-        var i = UIGraphicsGetImageFromCurrentImageContext()
+        let i = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         view.backgroundColor = UIColor(patternImage: i)
@@ -35,18 +35,18 @@ class Bookmarks: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = (self.view as UITableView).dequeueReusableCellWithIdentifier("Team") as UITableViewCell
-        var team = bookmarks[indexPath.row]
+        let cell = (self.view as! UITableView).dequeueReusableCellWithIdentifier("Team")! as UITableViewCell
+        let team = bookmarks[indexPath.row]
         cell.textLabel!.text = team.name
         return cell
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "ShowTeam" {
-            let teamDetailViewController = segue.destinationViewController as TeamViewController
+            let teamDetailViewController = segue.destinationViewController as! TeamViewController
             
-            let indexPath = (view as UITableView).indexPathForSelectedRow()!
-            var team = self.bookmarks[indexPath.row]
+            let indexPath = (view as! UITableView).indexPathForSelectedRow!
+            let team = self.bookmarks[indexPath.row]
             teamDetailViewController.title = team.name
             teamDetailViewController.team = team
             teamDetailViewController.showTeam()

@@ -27,11 +27,11 @@ class HttpDownloader{
         }*/
         
         let queue:NSOperationQueue = NSOperationQueue()
-        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
             
             dispatch_async(dispatch_get_main_queue()) {
                 if error != nil {
-                    callback(nil, error.localizedDescription)
+                    callback(nil, error!.localizedDescription)
                 } else {
                     callback(data, nil)
                 }

@@ -42,7 +42,7 @@ class TeamListViewController: UIViewController, UITableViewDelegate, UITableView
             }).allObjects
             
              self.results = sectionNames.map {
-                var sectionName:String = $0 as String
+                let sectionName:String = $0 as! String
                 
                 return TeamsTableSection(name: sectionName, teams: teams.filter( {(team: Team) -> Bool in
                         self.getSectionNameFrom(team.name) == sectionName
@@ -56,7 +56,7 @@ class TeamListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func getSectionNameFrom(name:String) -> String {
-        for var i = 0; i < name.utf16Count; i++ {
+        for i in 0 ..< name.characters.count {
             if("abcdefghijklmnopqrstuvwxyz".rangeOfString(name[i].lowercaseString) != nil){
                 return name[i]
             }
@@ -85,7 +85,7 @@ class TeamListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = resultsTableView.dequeueReusableCellWithIdentifier("Team") as UITableViewCell
+        let cell = resultsTableView.dequeueReusableCellWithIdentifier("Team")! as UITableViewCell
         
         var team : Team
         if tableView == search.searchResultsTableView {
@@ -104,7 +104,7 @@ class TeamListViewController: UIViewController, UITableViewDelegate, UITableView
         cell.textLabel!.text = team.name
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
-        var v = UIView()
+        let v = UIView()
         v.backgroundColor = UIColor(red: 111, green: 209, blue: 237, alpha: 0.6)
         cell.selectedBackgroundView = v;
 
@@ -116,8 +116,8 @@ class TeamListViewController: UIViewController, UITableViewDelegate, UITableView
         return false
     }
     
-    override func supportedInterfaceOrientations() -> Int {
-        return UIInterfaceOrientation.Portrait.rawValue
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return [.Portrait, .PortraitUpsideDown]
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -131,8 +131,8 @@ class TeamListViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         
         if let view = view as? UITableViewHeaderFooterView {
-            view.textLabel.backgroundColor = UIColor.clearColor()
-            view.textLabel.textColor = UIColor.blackColor()
+            view.textLabel!.backgroundColor = UIColor.clearColor()
+            view.textLabel!.textColor = UIColor.blackColor()
         }
     }
     
@@ -146,14 +146,13 @@ class TeamListViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "ShowTeam" {
-            let teamDetailViewController = segue.destinationViewController as TeamViewController
+            let teamDetailViewController = segue.destinationViewController as! TeamViewController
             var team:Team
-            println("\(_stdlib_getDemangledTypeName(sender))")
             if search.active {
-                let indexPath = self.search!.searchResultsTableView.indexPathForSelectedRow()!
+                let indexPath = self.search!.searchResultsTableView.indexPathForSelectedRow!
                 team = self.filteredResults[indexPath.row]
             } else {
-                let indexPath = resultsTableView.indexPathForSelectedRow()!
+                let indexPath = resultsTableView.indexPathForSelectedRow!
                 team = self.results[indexPath.section].teams[indexPath.row]
             }
             
@@ -169,26 +168,26 @@ class TeamListViewController: UIViewController, UITableViewDelegate, UITableView
             teamDetailViewController.showTeam()
         }
         if segue.identifier == "ShowBookmarks" {
-            let controller = segue.destinationViewController as Bookmarks
+            let controller = segue.destinationViewController as! Bookmarks
             controller.bookmarks = bookmarks
         }
     }
     
     func filterContentForSearchText(searchText: String, scope: String = "All") {
         self.filteredResults = self.allResults.filter({( team : Team) -> Bool in
-            var stringMatch = team.name.lowercaseString.rangeOfString(searchText.lowercaseString)
+            let stringMatch = team.name.lowercaseString.rangeOfString(searchText.lowercaseString)
             return (stringMatch != nil)
         })
     }
     
-    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
+    func searchDisplayController(controller: UISearchDisplayController?!, shouldReloadTableForSearchString searchString: String!) -> Bool {
         self.filterContentForSearchText(searchString)
         return true
     }
     
-    func searchDisplayController(controller: UISearchDisplayController!,
+    func searchDisplayController(controller: UISearchDisplayController,
         shouldReloadTableForSearchScope searchOption: Int) -> Bool {
-            self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
+            self.filterContentForSearchText(self.searchDisplayController!.searchBar.text!)
             return true
     }
     

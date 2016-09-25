@@ -16,10 +16,10 @@ class GamesDownloader {
         HttpDownloader().httpGetOld("http://sandsportsoz.com/" + team.id){
             (data, error) -> Void in
             if error != nil {
-                println(error)
+                print(error)
             } else {
-                var results = self.parseHTML(data!, teamName:team.name)
-                var sections = self.createSections(results)
+                let results = self.parseHTML(data!, teamName:team.name)
+                let sections = self.createSections(results)
                 callback(sections)
             }
         }
@@ -27,42 +27,41 @@ class GamesDownloader {
     
     func parseHTML(HTMLData:NSData, teamName: String) ->[Game] {
         var error: NSError?
-        var error2: NSErrorPointer? = nil
         var games = [Game]()
         
         let parser = TFHpple(HTMLData: HTMLData)
         var pairingsResults = parser.searchWithXPathQuery("//table[@class='fixtureTBL']/tr/td[position()=1 or position()=4 or position()=3 or position()=2 or position()=6]")
         
         if let error = error {
-            println("Error : \(error)")
+            print("Error : \(error)")
         } else {
-            for var i = ((pairingsResults.count - 4) / 5)-1; i >= 0 ; i--
+            for var i = ((pairingsResults.count - 4) / 5)-1; i >= 0 ; i -= 1
             {
                 
-                var startAt = (i * 5) + 5
-                var dates:NSString = (pairingsResults[startAt] as TFHppleElement).content.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                let startAt = (i * 5) + 5
+                let dates:String = (pairingsResults[startAt] as! TFHppleElement).content.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
                 
-                var time:NSString = "";
-                if((pairingsResults[startAt + 1]  as TFHppleElement).content != "B")
+                var time:String = "";
+                if((pairingsResults[startAt + 1]  as! TFHppleElement).content != "B")
                 {
-                time = " @ " + (pairingsResults[startAt + 1] as TFHppleElement).content.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) +
+                time = " @ " + (pairingsResults[startAt + 1] as! TFHppleElement).content.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) +
                 "pm \n"
                 }
                 
-                var score = (pairingsResults[startAt + 4] as TFHppleElement).content.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                var score = (pairingsResults[startAt + 4] as! TFHppleElement).content.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
                 
                 if(score == "X") {
                     score = ""
                 }
                 
-                var vsTeam = (pairingsResults[startAt + 2] as TFHppleElement).content.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                var vsTeam = (pairingsResults[startAt + 2] as! TFHppleElement).content.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
                 
                 if(vsTeam == teamName){
-                    vsTeam = (pairingsResults[startAt + 3] as TFHppleElement).content.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                    vsTeam = (pairingsResults[startAt + 3] as! TFHppleElement).content.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
                 } else if(score != ""){
                     //since we are taking the first team and putting it last, we also need to take the first score and put it last
-                    var s1 = score.componentsSeparatedByString("-")[0]
-                    var s2 = score.componentsSeparatedByString("-")[1]
+                    let s1 = score.componentsSeparatedByString("-")[0]
+                    let s2 = score.componentsSeparatedByString("-")[1]
                     score = s2 + "-" + s1
                 }
                 
@@ -80,7 +79,7 @@ class GamesDownloader {
         var pastGames = GamesTableSection(title:"past games", contents:[NSMutableAttributedString]())
         var upcomingGames = GamesTableSection(title:"upcoming games", contents:[NSMutableAttributedString]())
         
-        for var i = 0; i < games.count ; i++
+        for var i = 0; i < games.count ; i += 1
         {
             let game = games[i]
             var subtext:NSString = ""
@@ -91,7 +90,7 @@ class GamesDownloader {
                 subtext = "Bye"
             }
             
-            var attriString:NSMutableAttributedString = NSMutableAttributedString(string: game.date + " " + subtext)
+            let attriString:NSMutableAttributedString = NSMutableAttributedString(string: (game.date as String) + " " + (subtext as String))
             
             attriString.addAttributes([NSFontAttributeName:UIFont.boldSystemFontOfSize(14)], range: NSRange(location:0, length:game.date.length))
             

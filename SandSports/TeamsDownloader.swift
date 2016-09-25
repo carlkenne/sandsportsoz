@@ -14,7 +14,7 @@ class TeamsDownloader {
         HttpDownloader().httpGetOld("http://sandsportsoz.com/team.php"){
             (data, error) -> Void in
             if error != nil {
-                println(error)
+                print(error)
             } else {
                 var results = self.parseHTML(data!)
                 callback(results)
@@ -29,17 +29,17 @@ class TeamsDownloader {
         var idResults = parser.searchWithXPathQuery("//div[@class='teamName']/a/@href")
         var teams = [Team]()
         if let error = error {
-            println("Error : \(error)")
+            print("Error : \(error)")
         } else {
-            for var i = teamResults.count-1; i >= 0 ; i--
+            for var i = teamResults.count-1; i >= 0 ; i -= 1
             {
-                var name:NSString = (teamResults[i] as TFHppleElement).content.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-                var id:NSString = (idResults[i] as TFHppleElement).content.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                var name:NSString = (teamResults[i] as! TFHppleElement).content.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                var id:NSString = (idResults[i] as! TFHppleElement).content.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
                 
-                teams.append(Team(name:name, id: id))
+                teams.append(Team(name:name as String, id: id as String))
             }
         }
-        teams.sort({ $0.name < $1.name })
+        teams.sortInPlace({ $0.name < $1.name })
         return teams
     }
 }
